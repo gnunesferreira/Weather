@@ -12,9 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        WeatherManager.getCurrentWeather(lat: -22.600968, lon: -47.417608, success: { (locationWeather) in
+            print("Success")
+        }) { (error) in
+            print("Fail")
+        }
     }
-
-
 }
 
