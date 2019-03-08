@@ -6,5 +6,6 @@ target 'Weather Forecast' do
   use_frameworks!
 
   # Pods for Weather Forecast
+  pod 'Alamofire'
 
 end
