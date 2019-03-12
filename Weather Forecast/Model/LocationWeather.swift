@@ -22,8 +22,9 @@ struct LocationWeather: Codable {
     let description: String
     let humidity: Double
     let pressure: Double
+    let preciptation: Double?
     let windSpeed: Double
-    let windDirection: Double
+    let windDirection: Double?
     let sunrise: Int
     let sunset: Int
 
@@ -33,6 +34,7 @@ struct LocationWeather: Codable {
         case system = "sys"
         case main = "main"
         case wind = "wind"
+        case preciptation
     }
 
     enum SystemCodingKeys: String, CodingKey {
@@ -50,6 +52,10 @@ struct LocationWeather: Codable {
     enum WindCodingKeys: String, CodingKey {
         case speed
         case deg
+    }
+
+    enum PreciptationCodingKeys: String, CodingKey {
+        case value
     }
 
     init(from decoder: Decoder) throws {
@@ -81,7 +87,26 @@ struct LocationWeather: Codable {
         /// Parse properties nested in "wind" key
         let windContainer = try container.nestedContainer(keyedBy: WindCodingKeys.self, forKey: .wind)
         windSpeed = try windContainer.decode(Double.self, forKey: .speed)
-        windDirection = try windContainer.decode(Double.self, forKey: .deg)
+
+        if windContainer.contains(.deg) {
+            windDirection = try windContainer.decode(Double.self, forKey: .deg)
+        }
+        else {
+            windDirection = nil
+        }
+
+        /// Parse properties nested in "preceptation" key
+        if container.contains(.preciptation) {
+            let preciptationContainer = try container.nestedContainer(keyedBy: PreciptationCodingKeys.self, forKey: .preciptation)
+            if preciptationContainer.contains(.value) {
+                preciptation = try preciptationContainer.decode(Double.self, forKey: .value)
+            }
+            else {
+                preciptation = nil
+            }
+        } else {
+            preciptation = nil
+        }
     }
 
     func getCurrentWeatherImage() -> UIImage? {
@@ -111,5 +136,36 @@ struct LocationWeather: Codable {
         print("Current period of day \(result)")
 
         return result
+    }
+
+    func windDirectionString() -> String {
+
+        guard let direction = windDirection else {
+            return "-"
+        }
+
+        var windDirectionString = ""
+
+        if direction < 22.5 {
+            windDirectionString = "N"
+        } else if direction < 67.5 {
+            windDirectionString = "NE"
+        } else if direction < 112.5{
+            windDirectionString = "L"
+        } else if direction < 157.5 {
+            windDirectionString = "SE"
+        } else if direction < 202.5 {
+            windDirectionString = "S"
+        } else if direction < 247.5 {
+            windDirectionString = "SW"
+        } else if direction < 292.5 {
+            windDirectionString = "W"
+        } else if direction < 337.5 {
+            windDirectionString = "NW"
+        } else {
+            windDirectionString = "N"
+        }
+
+        return windDirectionString
     }
 }

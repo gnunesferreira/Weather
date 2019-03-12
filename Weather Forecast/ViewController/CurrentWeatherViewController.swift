@@ -80,12 +80,18 @@ class CurrentWeatherViewController: UIViewController {
 
         weatherImageView.image = currentWeather.getCurrentWeatherImage()
         locationLabel.text = "\(currentWeather.country), \(currentWeather.cityName)"
-        temperatureLabel.text = "\(Int(currentWeather.temperature - 273.15))°C"
+        temperatureLabel.text = "\(Int(currentWeather.temperature - 273.15))° C"
         weatherDescriptionLabel.text = "\(currentWeather.description)"
-        humidityLabel.text = "\(currentWeather.humidity)%"
-        pressureLabel.text = "\(currentWeather.pressure)hPa"
-        windLabel.text = "\(currentWeather.windSpeed)km/h"
-        windDirectionLabel.text = "\(currentWeather.windDirection)"
+        humidityLabel.text = "\(currentWeather.humidity) %"
+        pressureLabel.text = "\(currentWeather.pressure) hPa"
+        windLabel.text = "\(currentWeather.windSpeed) km/h"
+        windDirectionLabel.text = currentWeather.windDirectionString()
+
+        var preciptationString = "-"
+        if let preciptation = currentWeather.preciptation {
+            preciptationString = "\(preciptation)mm"
+        }
+        preciptationLabel.text = preciptationString
     }
 
     private func showConnectionError() {
@@ -110,6 +116,15 @@ class CurrentWeatherViewController: UIViewController {
 
         guard let currentCoordinate = locationManager.location?.coordinate else { return }
         requestCurrentWeather(coordinate: currentCoordinate)
+    }
+
+    @IBAction func shareAction(_ sender: Any) {
+
+        guard let currentLocationWeather = locationWeather else { return }
+
+        let currentWeatherMessage = "Hi, look the current weather here:\n\(currentLocationWeather.country), \(currentLocationWeather.cityName)\nTemperature: \(Int(currentLocationWeather.temperature - 273.15))° C\n\(currentLocationWeather.weatherStatus)"
+        let activityViewController = UIActivityViewController(activityItems: [currentWeatherMessage], applicationActivities: nil)
+        present(activityViewController, animated: true, completion: nil)
     }
 }
 

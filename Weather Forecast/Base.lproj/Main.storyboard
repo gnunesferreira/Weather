@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bBz-Ir-a65">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,53 +15,50 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Item 2-->
+        <!--Forecast-->
         <scene sceneID="1Dx-DJ-jvO">
             <objects>
                 <viewController id="HjM-TQ-KZ3" customClass="WeatherForecastViewController" customModule="Weather_Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1M-NJ-6D1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KP7-3Y-TdT">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIv-5n-jJg">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH7-e4-tZs">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big thunderstorm (night)" translatesAutoresizingMaskIntoConstraints="NO" id="svw-dO-fFc">
-                                                <rect key="frame" x="110" y="177.5" width="100" height="100"/>
+                                                <rect key="frame" x="137.5" y="227" width="100" height="100"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjh-dD-47r" userLabel="Space View">
-                                                <rect key="frame" x="0.0" y="277.5" width="320" height="33"/>
+                                                <rect key="frame" x="0.0" y="327" width="375" height="49.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There's an error to get the current forecast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwQ-hn-b10">
-                                                <rect key="frame" x="0.0" y="310.5" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="376.5" width="375" height="44"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onD-PZ-3TC">
-                                                <rect key="frame" x="116.5" y="388" width="87" height="34"/>
+                                                <rect key="frame" x="144" y="470.5" width="87" height="34"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                 <state key="normal" title="Try Again">
                                                     <color key="titleColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="tryAgainAction:" destination="jks-Ts-ZWC" eventType="touchUpInside" id="fnr-TJ-2sG"/>
-                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1K3-Gi-Ddh" userLabel="Space View">
-                                                <rect key="frame" x="0.0" y="422" width="320" height="33"/>
+                                                <rect key="frame" x="0.0" y="504.5" width="375" height="49.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNr-xh-RFA" userLabel="Space View">
-                                                <rect key="frame" x="0.0" y="354.5" width="320" height="33.5"/>
+                                                <rect key="frame" x="0.0" y="420.5" width="375" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -89,13 +86,13 @@
                                         </constraints>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgP-ZB-ERO">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big thunderstorm (night)" translatesAutoresizingMaskIntoConstraints="NO" id="oaA-Tz-GLj">
-                                                <rect key="frame" x="110" y="177.5" width="100" height="100"/>
+                                                <rect key="frame" x="137.5" y="227" width="100" height="100"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsV-mu-eBX">
-                                                <rect key="frame" x="0.0" y="277.5" width="320" height="177.5"/>
+                                                <rect key="frame" x="0.0" y="327" width="375" height="227"/>
                                                 <string key="text">It's mandatory to give location permission.
 Check your settings and
 try again.</string>
@@ -141,7 +138,7 @@ try again.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0kn-0q-3w6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="CKZ-0j-EHl"/>
+                    <tabBarItem key="tabBarItem" title="Forecast" image="Forecast" id="CKZ-0j-EHl"/>
                     <connections>
                         <outlet property="connectionErrorView" destination="sH7-e4-tZs" id="pNQ-iI-x27"/>
                         <outlet property="errorView" destination="ZIv-5n-jJg" id="7aF-m2-5qH"/>
@@ -153,22 +150,22 @@ try again.</string>
             </objects>
             <point key="canvasLocation" x="675" y="188.02816901408451"/>
         </scene>
-        <!--Item 1-->
+        <!--Today-->
         <scene sceneID="50j-EQ-xDv">
             <objects>
                 <viewController id="jks-Ts-ZWC" customClass="CurrentWeatherViewController" customModule="Weather_Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lwD-5y-bPK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5K-KJ-O0b">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuH-XN-w14" userLabel="Space view">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FH-zZ-oLg">
-                                        <rect key="frame" x="53.5" y="22" width="213" height="163.5"/>
+                                        <rect key="frame" x="81" y="47.5" width="213" height="163.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13u-YZ-PRg">
                                                 <rect key="frame" x="56.5" y="0.0" width="100" height="100"/>
@@ -255,13 +252,13 @@ try again.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cl-yd-oDj" userLabel="Space view">
-                                        <rect key="frame" x="0.0" y="185.5" width="320" height="17.5"/>
+                                        <rect key="frame" x="0.0" y="211" width="375" height="37.5"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77F-pp-rG7" userLabel="Weather Detail view">
-                                        <rect key="frame" x="20" y="203" width="280" height="172"/>
+                                        <rect key="frame" x="20" y="248.5" width="335" height="172"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ao-n4-CnW" userLabel="Divider View">
-                                                <rect key="frame" x="70" y="0.0" width="140" height="1"/>
+                                                <rect key="frame" x="97.5" y="0.0" width="140" height="1"/>
                                                 <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="16Z-C7-RnL"/>
@@ -269,22 +266,22 @@ try again.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Akx-BJ-nBx">
-                                                <rect key="frame" x="0.0" y="25" width="280" height="51"/>
+                                                <rect key="frame" x="0.0" y="25" width="335" height="51"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tC-N1-n83" userLabel="Space View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="51"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="51"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="42" id="Cez-gc-DqQ"/>
+                                                            <constraint firstAttribute="width" constant="22" id="Cez-gc-DqQ"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-Y0-6BY" userLabel="Humidity View">
-                                                        <rect key="frame" x="42" y="0.0" width="65.5" height="51"/>
+                                                        <rect key="frame" x="22" y="0.0" width="73" height="51"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Humidity" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-rV-L8c">
-                                                                <rect key="frame" x="17.5" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="21.5" y="0.0" width="30" height="30"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5q-o1-QML">
-                                                                <rect key="frame" x="0.0" y="33" width="65.5" height="18"/>
+                                                                <rect key="frame" x="0.0" y="33" width="73" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="18" id="lqe-c6-qZL"/>
                                                                 </constraints>
@@ -306,20 +303,20 @@ try again.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBn-Mz-r2W" userLabel="Space View">
-                                                        <rect key="frame" x="107.5" y="0.0" width="0.0" height="51"/>
+                                                        <rect key="frame" x="95" y="0.0" width="36" height="51"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMt-Na-y1U" userLabel="Preciptation View">
-                                                        <rect key="frame" x="107.5" y="0.0" width="65" height="51"/>
+                                                        <rect key="frame" x="131" y="0.0" width="73" height="51"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Precipitation" translatesAutoresizingMaskIntoConstraints="NO" id="I2F-gU-7uR">
-                                                                <rect key="frame" x="17.5" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="21.5" y="0.0" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="NJG-ZM-HXT"/>
                                                                     <constraint firstAttribute="width" constant="30" id="v7C-2k-BBC"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0 mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WII-m7-u9i">
-                                                                <rect key="frame" x="0.0" y="33" width="65" height="18"/>
+                                                                <rect key="frame" x="0.0" y="33" width="73" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="18" id="gA1-6w-QER"/>
                                                                 </constraints>
@@ -341,20 +338,20 @@ try again.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-Sa-GJz" userLabel="Space View">
-                                                        <rect key="frame" x="172.5" y="0.0" width="0.0" height="51"/>
+                                                        <rect key="frame" x="204" y="0.0" width="36" height="51"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDe-Rm-5pi" userLabel="Pressure">
-                                                        <rect key="frame" x="172.5" y="0.0" width="65.5" height="51"/>
+                                                        <rect key="frame" x="240" y="0.0" width="73" height="51"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pressure" translatesAutoresizingMaskIntoConstraints="NO" id="yN7-4S-tv9">
-                                                                <rect key="frame" x="18" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="21.5" y="0.0" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="aME-20-k3Y"/>
                                                                     <constraint firstAttribute="width" constant="30" id="kVm-Rq-lr4"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1019 hPa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLq-PK-hDF">
-                                                                <rect key="frame" x="0.0" y="33" width="65.5" height="18"/>
+                                                                <rect key="frame" x="0.0" y="33" width="73" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="18" id="xTy-Ia-zJz"/>
                                                                 </constraints>
@@ -376,10 +373,7 @@ try again.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sot-ZA-gaq" userLabel="Space View">
-                                                        <rect key="frame" x="238" y="0.0" width="42" height="51"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="42" id="P4q-ja-ndK"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="313" y="0.0" width="22" height="51"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -406,6 +400,7 @@ try again.</string>
                                                     <constraint firstItem="bMt-Na-y1U" firstAttribute="leading" secondItem="uBn-Mz-r2W" secondAttribute="trailing" id="bRH-26-hGW"/>
                                                     <constraint firstAttribute="trailing" secondItem="Sot-ZA-gaq" secondAttribute="trailing" id="dFA-sJ-5t0"/>
                                                     <constraint firstItem="VDe-Rm-5pi" firstAttribute="width" secondItem="bMt-Na-y1U" secondAttribute="width" id="h5J-po-Xu6"/>
+                                                    <constraint firstItem="Sot-ZA-gaq" firstAttribute="width" secondItem="3tC-N1-n83" secondAttribute="width" id="nis-Ut-Mtg"/>
                                                     <constraint firstAttribute="bottom" secondItem="ILr-Sa-GJz" secondAttribute="bottom" id="onJ-wx-W1c"/>
                                                     <constraint firstAttribute="bottom" secondItem="Sot-ZA-gaq" secondAttribute="bottom" id="p2F-du-Xfn"/>
                                                     <constraint firstItem="VDe-Rm-5pi" firstAttribute="width" secondItem="0j6-Y0-6BY" secondAttribute="width" id="sz6-qU-2W5"/>
@@ -413,13 +408,13 @@ try again.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIf-EN-Knu">
-                                                <rect key="frame" x="0.0" y="96" width="280" height="51"/>
+                                                <rect key="frame" x="0.0" y="96" width="335" height="51"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbt-2p-GlZ" userLabel="Space View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="51"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="73.5" height="51"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xA0-IL-3CB">
-                                                        <rect key="frame" x="52.5" y="0.0" width="175" height="51"/>
+                                                        <rect key="frame" x="73.5" y="0.0" width="188" height="51"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b88-ID-Q7D" userLabel="Wind">
                                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="51"/>
@@ -454,10 +449,10 @@ try again.</string>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfV-kG-rS5" userLabel="Space View">
-                                                                <rect key="frame" x="72" y="0.0" width="31" height="51"/>
+                                                                <rect key="frame" x="72" y="0.0" width="44" height="51"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcg-Xc-Jwi" userLabel="Wind Direction">
-                                                                <rect key="frame" x="103" y="0.0" width="72" height="51"/>
+                                                                <rect key="frame" x="116" y="0.0" width="72" height="51"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wind Direction" translatesAutoresizingMaskIntoConstraints="NO" id="Ybg-FC-ade">
                                                                         <rect key="frame" x="21" y="0.0" width="30" height="30"/>
@@ -504,7 +499,7 @@ try again.</string>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaJ-lA-TKc" userLabel="Space View">
-                                                        <rect key="frame" x="227.5" y="0.0" width="52.5" height="51"/>
+                                                        <rect key="frame" x="261.5" y="0.0" width="73.5" height="51"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -523,7 +518,7 @@ try again.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXC-dC-Wpe" userLabel="Divider View">
-                                                <rect key="frame" x="70" y="171" width="140" height="1"/>
+                                                <rect key="frame" x="97.5" y="171" width="140" height="1"/>
                                                 <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Mvw-0j-Fi5"/>
@@ -547,17 +542,20 @@ try again.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbS-3a-5hD" userLabel="Space view">
-                                        <rect key="frame" x="0.0" y="375" width="320" height="23"/>
+                                        <rect key="frame" x="0.0" y="420.5" width="375" height="50"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZo-rK-QpX">
-                                        <rect key="frame" x="133.5" y="398" width="53" height="34"/>
+                                        <rect key="frame" x="161" y="470.5" width="53" height="34"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <state key="normal" title="Share">
                                             <color key="titleColor" red="1" green="0.56905784145850136" blue="0.46174298700644656" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareAction:" destination="jks-Ts-ZWC" eventType="touchUpInside" id="7MS-B9-AtZ"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00h-Wd-vmf" userLabel="Space view">
-                                        <rect key="frame" x="0.0" y="432" width="320" height="23"/>
+                                        <rect key="frame" x="0.0" y="504.5" width="375" height="49.5"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -589,26 +587,26 @@ try again.</string>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFA-bY-XfL">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqw-q0-HaA">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big thunderstorm (night)" translatesAutoresizingMaskIntoConstraints="NO" id="92X-CQ-DSs">
-                                                <rect key="frame" x="110" y="177.5" width="100" height="100"/>
+                                                <rect key="frame" x="137.5" y="227" width="100" height="100"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88R-fP-wQW" userLabel="Space View">
-                                                <rect key="frame" x="0.0" y="277.5" width="320" height="33"/>
+                                                <rect key="frame" x="0.0" y="327" width="375" height="49.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There's an error to get the current forecast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGD-7a-fSQ">
-                                                <rect key="frame" x="0.0" y="310.5" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="376.5" width="375" height="44"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh3-X5-cwn">
-                                                <rect key="frame" x="116.5" y="388" width="87" height="34"/>
+                                                <rect key="frame" x="144" y="470.5" width="87" height="34"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                 <state key="normal" title="Try Again">
                                                     <color key="titleColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -618,11 +616,11 @@ try again.</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvA-GU-2tf" userLabel="Space View">
-                                                <rect key="frame" x="0.0" y="422" width="320" height="33"/>
+                                                <rect key="frame" x="0.0" y="504.5" width="375" height="49.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzy-ZF-19Z" userLabel="Space View">
-                                                <rect key="frame" x="0.0" y="354.5" width="320" height="33.5"/>
+                                                <rect key="frame" x="0.0" y="420.5" width="375" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
@@ -650,13 +648,13 @@ try again.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REp-wO-xis" userLabel="Permission Error">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big thunderstorm (night)" translatesAutoresizingMaskIntoConstraints="NO" id="X5c-o1-988">
-                                                <rect key="frame" x="110" y="177.5" width="100" height="100"/>
+                                                <rect key="frame" x="137.5" y="227" width="100" height="100"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw0-0I-icu">
-                                                <rect key="frame" x="0.0" y="277.5" width="320" height="177.5"/>
+                                                <rect key="frame" x="0.0" y="327" width="375" height="227"/>
                                                 <string key="text">It's mandatory to give location permission.
 Check your settings and
 try again.</string>
@@ -702,7 +700,7 @@ try again.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VNN-Wc-o21"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="xHE-eT-S9h"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="Today" id="xHE-eT-S9h"/>
                     <connections>
                         <outlet property="connectionErrorView" destination="sqw-q0-HaA" id="SIi-Rw-hHO"/>
                         <outlet property="contentView" destination="U5K-KJ-O0b" id="kGj-cC-Pi2"/>
@@ -721,14 +719,14 @@ try again.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Zw-92-Hag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671.20000000000005" y="-478.11094452773619"/>
+            <point key="canvasLocation" x="669.375" y="-478.52112676056339"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7en-27-ZYM">
             <objects>
                 <navigationController id="bBz-Ir-a65" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2ov-RT-bTM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -747,7 +745,8 @@ try again.</string>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eXL-Dm-Qxl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="jks-Ts-ZWC" kind="relationship" relationship="viewControllers" id="Vmf-9i-Hcw"/>
@@ -761,9 +760,11 @@ try again.</string>
     </scenes>
     <resources>
         <image name="Current Location" width="12" height="12"/>
+        <image name="Forecast" width="23" height="23"/>
         <image name="Humidity" width="30" height="30"/>
         <image name="Precipitation" width="30" height="30"/>
         <image name="Pressure" width="30" height="30"/>
+        <image name="Today" width="25" height="25"/>
         <image name="Wind" width="30" height="30"/>
         <image name="Wind Direction" width="30" height="30"/>
         <image name="big thunderstorm (night)" width="100" height="100"/>
