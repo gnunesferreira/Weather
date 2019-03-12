@@ -12,11 +12,11 @@ struct WeatherConstants {
 
     struct APIConstants {
 
-        static let baseURL = "https://api.openweathermap.org/data/2.5/"
+        static let baseURL = "https://api.openweathermap.org/data/2.5"
 
         struct endpoints {
             static let currentWeatherEndpoint = "weather"
-            static let forecastEndpoint = ""
+            static let forecastEndpoint = "forecast"
         }
 
         struct parameters {
