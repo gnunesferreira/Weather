@@ -24,14 +24,16 @@ class Network {
         
         let finalURL = "\(url)&\(appIdKeyParameter)=\(appIdValue)"
         
-        print(finalURL)
+        print("[Network.get(with:success:failure:)] finalURL \(finalURL)")
         
         Alamofire.request(finalURL).responseJSON { (dataResponse) in
             
             if let json = dataResponse.result.value {
+                print("[Network.get(with:success:failure:)] Request succeded")
                 success(json)
             }
             else {
+                print("[Network.get(with:success:failure:)] Request failed")
                 failure(NetworkError.requestIssue)
             }
         }

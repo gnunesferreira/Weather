@@ -30,6 +30,8 @@ class WeatherForecastTableViewCell: UITableViewCell {
 
     func set(time: String, image: UIImage?, weatherStatus: String, temperature: String) {
 
+        print("[WeatherForecastTableViewCell.set(time:image:weatherStatus:temperature] time: \(time) image: \(String(describing: image)) weatherStatus: \(weatherStatus) temperature: \(temperature)")
+
         descriptionImageView.image = image
         timeLabel.text = time
         statusLabel.text = weatherStatus

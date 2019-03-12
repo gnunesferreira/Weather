@@ -62,6 +62,8 @@ class CurrentWeatherViewController: UIViewController {
 
     private func requestCurrentWeather(coordinate: CLLocationCoordinate2D) {
 
+        print("[CurrentWeatherViewController.requestCurrentWeather(coordinate:)] Coordinate \(coordinate)")
+
         LoadingView.show()
 
         errorView.isHidden = true
@@ -70,12 +72,16 @@ class CurrentWeatherViewController: UIViewController {
 
         WeatherManager.getCurrentWeather(location: coordinate, success: { [weak self](locationWeather) in
 
+            print("[CurrentWeatherViewController.requestCurrentWeather(coordinate:)] Success to get location weather")
+
             guard let weakSelf = self else { return }
             LoadingView.dismiss()
             weakSelf.locationWeather = locationWeather
             weakSelf.updateScreen()
             weakSelf.contentView.isHidden = false
         }) { [weak self] (error) in
+
+            print("[CurrentWeatherViewController.requestCurrentWeater(coordinate:)] Failure to get location weather")
             LoadingView.dismiss()
             self?.showConnectionError()
         }
@@ -84,6 +90,8 @@ class CurrentWeatherViewController: UIViewController {
     // MARK: - Layout methods
 
     private func updateScreen() {
+
+        print("[CurrentWeatherViewController.updateScreen] Updating screen with location weather")
 
         guard let currentWeather = locationWeather else { return }
 
@@ -104,12 +112,18 @@ class CurrentWeatherViewController: UIViewController {
     }
 
     private func showConnectionError() {
+
+        print("[CurrentWeatherViewController.showConnectionError] Showing connection error")
+
         errorView.isHidden = false
         connectionErrorView.isHidden = false
         permissionErrorView.isHidden = true
     }
 
     private func showPermissionError() {
+
+        print("[CurrentWeatherViewController.showPermissionError] Showing permission error")
+
         errorView.isHidden = false
         connectionErrorView.isHidden = true
         permissionErrorView.isHidden = false
@@ -118,6 +132,8 @@ class CurrentWeatherViewController: UIViewController {
     // MARK: - IBAction
 
     @IBAction func tryAgainAction(_ sender: Any) {
+
+        print("[CurrentWeatherViewController.tryAgainAction(_:)] User tried again")
 
         errorView.isHidden = true
         connectionErrorView.isHidden = true
@@ -128,6 +144,8 @@ class CurrentWeatherViewController: UIViewController {
     }
 
     @IBAction func shareAction(_ sender: Any) {
+
+        print("[CurrentWeatherViewController.shareAction(_:)] User wants to share weather")
 
         guard let currentLocationWeather = locationWeather else { return }
 

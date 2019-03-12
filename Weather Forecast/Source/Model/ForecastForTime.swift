@@ -48,9 +48,7 @@ struct ForecastForTime: Codable {
 
         let imageName = "medium \(weatherStatus.lowercased())"
         let image = UIImage(named: imageName)
-
-        print(imageName)
-
+        
         return image
     }
 }

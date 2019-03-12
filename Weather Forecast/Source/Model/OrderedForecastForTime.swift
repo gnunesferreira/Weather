@@ -41,6 +41,8 @@ struct OrderedForecastForTime {
         }
 
         timeArray = partialTimeArray.reversed()
+        print("[OrderedForecastForTime.init] Time array \(timeArray.count)")
         forecastDictionary = partialForecastDictionary
+        print("[OrderedForecastForTime.init] Forecast dictionary keys count \(forecastDictionary.keys.count)")
     }
 }

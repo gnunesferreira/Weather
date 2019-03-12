@@ -52,6 +52,9 @@
                                                 <state key="normal" title="Try Again">
                                                     <color key="titleColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tryAgainAction:" destination="HjM-TQ-KZ3" eventType="touchUpInside" id="jRc-Sq-1D8"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1K3-Gi-Ddh" userLabel="Space View">
                                                 <rect key="frame" x="0.0" y="504.5" width="375" height="49.5"/>

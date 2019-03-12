@@ -58,6 +58,8 @@ class WeatherForecastViewController: UIViewController {
 
     private func requestWeatherForecastFor(coordinate: CLLocationCoordinate2D) {
 
+        print("[WeatherForecastViewController.requestWeatherForecastFor(coordinate:)] Coordinate \(coordinate)")
+
         LoadingView.show()
 
         errorView.isHidden = true
@@ -66,6 +68,8 @@ class WeatherForecastViewController: UIViewController {
 
         WeatherManager.getWeatherForecast(location: coordinate, success: { [weak self](orderedForecast) in
 
+            print("[WeatherForecastViewController.requestWeatherForecastFor(coordinate:)] Success to get location forecast")
+
             LoadingView.dismiss()
 
             guard let weakSelf = self else { return }
@@ -73,6 +77,10 @@ class WeatherForecastViewController: UIViewController {
             weakSelf.tableView.reloadData()
             weakSelf.tableView.isHidden = false
         }) { [weak self](error) in
+
+            print("[WeatherForecastViewController.requestWeatherForecastFor(coordinate:)] Failure to get location forecast")
+
+            LoadingView.dismiss()
             self?.showConnectionError()
         }
     }
@@ -95,12 +103,18 @@ class WeatherForecastViewController: UIViewController {
     }
 
     private func showConnectionError() {
+
+        print("[WeatherForecastViewController.showConnectionError()] Showing connection error")
+
         errorView.isHidden = false
         connectionErrorView.isHidden = false
         permissionErrorView.isHidden = true
     }
 
     private func showPermissionError() {
+
+        print("[WeatherForecastViewController.showPermissionError()] Showing permission error")
+
         errorView.isHidden = false
         connectionErrorView.isHidden = true
         permissionErrorView.isHidden = false
@@ -109,6 +123,8 @@ class WeatherForecastViewController: UIViewController {
     // MARK: - IBAction
 
     @IBAction func tryAgainAction(_ sender: Any) {
+
+        print("[WeatherForecastViewController.tryAgainAction(_:)] User tried again")
 
         errorView.isHidden = true
         connectionErrorView.isHidden = true

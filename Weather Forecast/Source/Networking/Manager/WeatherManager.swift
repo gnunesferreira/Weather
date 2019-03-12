@@ -18,6 +18,8 @@ struct WeatherManager {
 
     static func getCurrentWeather(location: CLLocationCoordinate2D, success: @escaping (LocationWeather) -> Void, failure: @escaping (Error) -> Void) {
 
+        print("[WeatherManager.getCurrentWeather(location:success:failure)] \(location)")
+
         let lat = Double(location.latitude)
         let lon = Double(location.longitude)
 
@@ -26,17 +28,23 @@ struct WeatherManager {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject:response)
                 let locationWeather = try JSONDecoder().decode(LocationWeather.self, from: jsonData)
+
+                print("[WeatherManager.getCurrentWeather(location:success:failure)] Success to get and parse LocationWeather")
                 success(locationWeather)
             }
             catch {
+                print("[WeatherManager.getCurrentWeather(location:success:failure)] Success to get and fail to parse LocationWeather")
                 failure(CurrentWeatherError.parseError)
             }
         }) { (error) in
+            print("[WeatherManager.getCurrentWeather(location:success:failure)] Fail to get LocationWeather")
             failure(error)
         }
     }
 
     static func getWeatherForecast(location: CLLocationCoordinate2D, success: @escaping (OrderedForecastForTime) -> Void, failure: @escaping (Error) -> Void) {
+
+        print("[WeatherManager.getWeatherForecast(location:success:failure:)] \(location)")
 
         let lat = Double(location.latitude)
         let lon = Double(location.longitude)
@@ -51,11 +59,16 @@ struct WeatherManager {
 
                 let orderedForecast = OrderedForecastForTime(forecastForTimeArray: forecastForTimeArray)
 
+                print("[WeatherManager.getWeatherForecast(location:success:failure:) Success to get and parse OrderedForecastForTime")
+
                 success(orderedForecast)
             } catch {
+
+                print("[WeatherManager.getWeatherForecast(location:success:failure:)] Success to get and fail to parse OrderedForecastForTime")
                 failure(CurrentWeatherError.parseError)
             }
         }) { (error) in
+            print("[WeatherManager.getWeatherForecast(location:success:failure:)] Fail to get LocationWeOrderedForecastForTimeather")
             failure(error)
         }
     }

@@ -214,6 +214,18 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
+		D8B592A02238422200055462 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D875E7D52236C735004D546D /* Model */,
+				D875E7D82236C8D0004D546D /* Networking */,
+				D875E7D92236C8E3004D546D /* Utils */,
+				D875E7E9223702A4004D546D /* View */,
+				D875E7D42236C727004D546D /* ViewController */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		D8CBD46C2232A94E006F987B = {
 			isa = PBXGroup;
 			children = (
@@ -236,12 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				D8CBD4782232A94E006F987B /* AppDelegate.swift */,
-				D875E7D52236C735004D546D /* Model */,
-				D875E7D82236C8D0004D546D /* Networking */,
 				D875E7DB2236C933004D546D /* Resources */,
-				D875E7D92236C8E3004D546D /* Utils */,
-				D875E7E9223702A4004D546D /* View */,
-				D875E7D42236C727004D546D /* ViewController */,
+				D8B592A02238422200055462 /* Source */,
 			);
 			path = "Weather Forecast";
 			sourceTree = "<group>";

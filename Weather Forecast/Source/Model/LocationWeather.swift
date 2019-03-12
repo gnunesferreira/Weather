@@ -115,7 +115,7 @@ struct LocationWeather: Codable {
         let imageName = "big \(description.lowercased()) (\(periodString))"
         let image = UIImage(named: imageName)
 
-        print(imageName)
+        print("[LocationWeather.getCurrentWeatherImage] \(imageName)")
 
         return image
     }
@@ -133,7 +133,7 @@ struct LocationWeather: Codable {
             result = .night
         }
 
-        print("Current period of day \(result)")
+        print("[LocationWeather.currentPeriod] \(result)")
 
         return result
     }
@@ -165,6 +165,8 @@ struct LocationWeather: Codable {
         } else {
             windDirectionString = "N"
         }
+
+        print("[LocationWeather.windDirectionString] \(direction) \(windDirectionString)")
 
         return windDirectionString
     }

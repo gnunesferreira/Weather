@@ -92,6 +92,8 @@ class LoadingView: UIView {
 
     static func show() {
 
+        print("[LoadingView.show] Showing loading view")
+
         loadingView = LoadingView()
         guard let currentLoadingView = loadingView else { return }
 
@@ -109,6 +111,8 @@ class LoadingView: UIView {
     }
 
     static func dismiss() {
+
+        print("[LoadingView.show] Dismissing loading view")
 
         UIView.animate(withDuration: 0.3, animations: {
             loadingView?.alpha = 0.0

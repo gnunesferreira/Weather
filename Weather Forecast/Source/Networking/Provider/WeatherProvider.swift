@@ -18,7 +18,6 @@ struct WeatherProvider {
         let lonParameter = WeatherConstants.APIConstants.parameters.lon
         
         let finalURL = "\(baseUrl)/\(endpoint)?\(latParameter)=\(lat)&\(lonParameter)=\(lon)"
-        print(finalURL)
         
         Network.get(with: finalURL, success: { (response) in
             
@@ -40,7 +39,6 @@ struct WeatherProvider {
         let lonParameter = WeatherConstants.APIConstants.parameters.lon
         
         let finalURL = "\(baseUrl)/\(endpoint)?\(latParameter)=\(lat)&\(lonParameter)=\(lon)"
-        print(finalURL)
         
         Network.get(with: finalURL, success: { (response) in
             OperationQueue.main.addOperation {
