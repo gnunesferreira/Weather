@@ -20,6 +20,7 @@
 		D8B592932237035400055462 /* WeatherForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B592922237035400055462 /* WeatherForecastViewController.swift */; };
 		D8B592982237088600055462 /* WeatherForecastHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B592972237088600055462 /* WeatherForecastHeaderView.xib */; };
 		D8B5929A22370A3F00055462 /* WeatherForecastHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5929922370A3F00055462 /* WeatherForecastHeaderView.swift */; };
+		D8B5929D2237EEAA00055462 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5929C2237EEAA00055462 /* LoadingView.swift */; };
 		D8CBD4792232A94E006F987B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CBD4782232A94E006F987B /* AppDelegate.swift */; };
 		D8CBD47B2232A94E006F987B /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CBD47A2232A94E006F987B /* CurrentWeatherViewController.swift */; };
 		D8CBD47E2232A94E006F987B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CBD47C2232A94E006F987B /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		D8B592922237035400055462 /* WeatherForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastViewController.swift; sourceTree = "<group>"; };
 		D8B592972237088600055462 /* WeatherForecastHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherForecastHeaderView.xib; sourceTree = "<group>"; };
 		D8B5929922370A3F00055462 /* WeatherForecastHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastHeaderView.swift; sourceTree = "<group>"; };
+		D8B5929C2237EEAA00055462 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		D8CBD4752232A94E006F987B /* Weather Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CBD4782232A94E006F987B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CBD47A2232A94E006F987B /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		D875E7E9223702A4004D546D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8B5929B2237EE9500055462 /* LoadingView */,
 				D8B592942237085A00055462 /* WeatherForecastHeaderView */,
 				D875E7EA223702AD004D546D /* WeatherForecastTableViewCell */,
 			);
@@ -198,6 +201,14 @@
 				D8B5929922370A3F00055462 /* WeatherForecastHeaderView.swift */,
 			);
 			path = WeatherForecastHeaderView;
+			sourceTree = "<group>";
+		};
+		D8B5929B2237EE9500055462 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				D8B5929C2237EEAA00055462 /* LoadingView.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		D8CBD46C2232A94E006F987B = {
@@ -370,6 +381,7 @@
 				D875E7E42236DC70004D546D /* Weather.swift in Sources */,
 				D8D603C62235ECFA00AE96DB /* OrderedForecastForTime.swift in Sources */,
 				D8CBD4792232A94E006F987B /* AppDelegate.swift in Sources */,
+				D8B5929D2237EEAA00055462 /* LoadingView.swift in Sources */,
 				D8D603C42235EA2B00AE96DB /* WeatherProvider.swift in Sources */,
 				D8B1977E2232BAD4009032DD /* WeatherManager.swift in Sources */,
 				D8B592932237035400055462 /* WeatherForecastViewController.swift in Sources */,

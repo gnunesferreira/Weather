@@ -12,6 +12,7 @@ import CoreLocation
 class CurrentWeatherViewController: UIViewController {
 
     // MARK: - IBOutlets
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -32,6 +33,8 @@ class CurrentWeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.contentView.isHidden = true
+
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -44,13 +47,17 @@ class CurrentWeatherViewController: UIViewController {
 
     private func requestCurrentWeather(coordinate: CLLocationCoordinate2D) {
 
+        LoadingView.show()
+
         WeatherManager.getCurrentWeather(location: coordinate, success: { [weak self](locationWeather) in
 
             guard let weakSelf = self else { return }
+            LoadingView.dismiss()
             weakSelf.locationWeather = locationWeather
             weakSelf.updateScreen()
-        }) { (error) in
-
+            weakSelf.contentView.isHidden = false
+        }) { [weak self] (error) in
+            LoadingView.dismiss()
         }
     }
 
@@ -65,7 +72,6 @@ class CurrentWeatherViewController: UIViewController {
         temperatureLabel.text = "\(Int(currentWeather.temperature - 273.15))°C"
         weatherDescriptionLabel.text = "\(currentWeather.description)"
         humidityLabel.text = "\(currentWeather.humidity)%"
-//        preciptationLabel.text = "\(currentWeather.)mm"
         pressureLabel.text = "\(currentWeather.pressure)hPa"
         windLabel.text = "\(currentWeather.windSpeed)km/h"
         windDirectionLabel.text = "\(currentWeather.windDirection)"

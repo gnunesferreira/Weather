@@ -11,18 +11,34 @@ import CoreLocation
 
 class WeatherForecastViewController: UIViewController {
 
+    // MARK: - IBOutlet
+
     @IBOutlet weak var tableView: UITableView!
+
+    // MARK: - Properties
 
     private let locationManager = CLLocationManager()
     private var orderedForecast: OrderedForecastForTime?
 
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.isHidden = true
+
+        initTableView()
+        initLocationManager()
+    }
+
+    private func initTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "WeatherForecastTableViewCell", bundle: nil), forCellReuseIdentifier: WeatherForecastTableViewCell.identifier)
         tableView.register(UINib(nibName: "WeatherForecastHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: WeatherForecastHeaderView.identifier)
+    }
+
+    private func initLocationManager() {
 
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -32,21 +48,44 @@ class WeatherForecastViewController: UIViewController {
         }
     }
 
+    // MARK: - Request
+
     private func requestWeatherForecastFor(coordinate: CLLocationCoordinate2D) {
 
-        let location = CLLocationCoordinate2D(latitude: 50.072757, longitude: 14.4346233)
+        LoadingView.show()
 
-        WeatherManager.getWeatherForecast(location: location, success: { [weak self](orderedForecast) in
+        WeatherManager.getWeatherForecast(location: coordinate, success: { [weak self](orderedForecast) in
+
+            LoadingView.dismiss()
 
             guard let weakSelf = self else { return }
             weakSelf.orderedForecast = orderedForecast
             weakSelf.tableView.reloadData()
+            weakSelf.tableView.isHidden = false
         }) { (error) in
 
         }
     }
+
+    // MARK: - Methods
+
+    private func forecastObjectFor(indexPath: IndexPath) -> ForecastForTime? {
+
+        guard let dateForecastArray = forecastArrayFor(section: indexPath.section) else { return nil}
+        let forecastObject = dateForecastArray[indexPath.row]
+        return forecastObject
+    }
+
+    private func forecastArrayFor(section: Int) -> [ForecastForTime]? {
+
+        guard let orderedForecastForTime = orderedForecast else { return nil }
+        let sectionDate = orderedForecastForTime.timeArray[section]
+        guard let dateForecastArray = orderedForecastForTime.forecastDictionary[sectionDate] else { return nil }
+        return dateForecastArray
+    }
 }
 
+// MARK: - CLLocationManagerDelegate
 extension WeatherForecastViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -58,22 +97,17 @@ extension WeatherForecastViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension WeatherForecastViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        guard let orderedForecastForTime = orderedForecast else { return 0 }
-        let sectionDate = orderedForecastForTime.timeArray[section]
-        guard let dateForecastArray = orderedForecastForTime.forecastDictionary[sectionDate] else { return 0 }
+        guard let dateForecastArray = forecastArrayFor(section: section) else { return 0 }
         return dateForecastArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let orderedForecastForTime = orderedForecast else { return UITableViewCell() }
-        let sectionDate = orderedForecastForTime.timeArray[indexPath.section]
-        guard let dateForecastArray = orderedForecastForTime.forecastDictionary[sectionDate] else { return UITableViewCell() }
-        let forecastObject = dateForecastArray[indexPath.row]
+        guard let forecastObject = forecastObjectFor(indexPath: indexPath) else { return UITableViewCell () }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: WeatherForecastTableViewCell.identifier) as! WeatherForecastTableViewCell
 
@@ -93,6 +127,7 @@ extension WeatherForecastViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension WeatherForecastViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

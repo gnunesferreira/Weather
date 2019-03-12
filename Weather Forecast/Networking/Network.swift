@@ -16,18 +16,18 @@ enum NetworkError: Error {
 }
 
 class Network {
-
+    
     static func get(with url: URLConvertible, success: @escaping (Any) -> Void, failure: @escaping (Error) -> Void) {
-
+        
         let appIdKeyParameter = WeatherConstants.APIConstants.parameters.appId
         let appIdValue = WeatherConstants.APIConstants.parameters.appIdValue
-
+        
         let finalURL = "\(url)&\(appIdKeyParameter)=\(appIdValue)"
-
+        
         print(finalURL)
-
+        
         Alamofire.request(finalURL).responseJSON { (dataResponse) in
-
+            
             if let json = dataResponse.result.value {
                 success(json)
             }
