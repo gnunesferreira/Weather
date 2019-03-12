@@ -15,6 +15,10 @@ class WeatherForecastViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var connectionErrorView: UIView!
+    @IBOutlet weak var permissionErrorView: UIView!
+
     // MARK: - Properties
 
     private let locationManager = CLLocationManager()
@@ -45,6 +49,8 @@ class WeatherForecastViewController: UIViewController {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+        } else {
+            showPermissionError()
         }
     }
 
@@ -54,6 +60,10 @@ class WeatherForecastViewController: UIViewController {
 
         LoadingView.show()
 
+        errorView.isHidden = true
+        connectionErrorView.isHidden = true
+        permissionErrorView.isHidden = true
+
         WeatherManager.getWeatherForecast(location: coordinate, success: { [weak self](orderedForecast) in
 
             LoadingView.dismiss()
@@ -62,8 +72,8 @@ class WeatherForecastViewController: UIViewController {
             weakSelf.orderedForecast = orderedForecast
             weakSelf.tableView.reloadData()
             weakSelf.tableView.isHidden = false
-        }) { (error) in
-
+        }) { [weak self](error) in
+            self?.showConnectionError()
         }
     }
 
@@ -83,6 +93,30 @@ class WeatherForecastViewController: UIViewController {
         guard let dateForecastArray = orderedForecastForTime.forecastDictionary[sectionDate] else { return nil }
         return dateForecastArray
     }
+
+    private func showConnectionError() {
+        errorView.isHidden = false
+        connectionErrorView.isHidden = false
+        permissionErrorView.isHidden = true
+    }
+
+    private func showPermissionError() {
+        errorView.isHidden = false
+        connectionErrorView.isHidden = true
+        permissionErrorView.isHidden = false
+    }
+
+    // MARK: - IBAction
+
+    @IBAction func tryAgainAction(_ sender: Any) {
+
+        errorView.isHidden = true
+        connectionErrorView.isHidden = true
+        permissionErrorView.isHidden = true
+
+        guard let currentCoordinate = locationManager.location?.coordinate else { return }
+        requestWeatherForecastFor(coordinate: currentCoordinate)
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -94,6 +128,25 @@ extension WeatherForecastViewController: CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         guard let currentCoordinate = locations.first?.coordinate else { return }
         requestWeatherForecastFor(coordinate: currentCoordinate)
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+
+        switch status {
+        case .notDetermined:
+            showPermissionError()
+        case .restricted:
+            showPermissionError()
+        case .denied:
+            showPermissionError()
+        default:
+            break
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+
+        showPermissionError()
     }
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bBz-Ir-a65">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,48 +20,155 @@
             <objects>
                 <viewController id="HjM-TQ-KZ3" customClass="WeatherForecastViewController" customModule="Weather_Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1M-NJ-6D1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KP7-3Y-TdT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIv-5n-jJg">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH7-e4-tZs">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big thunderstorm (night)" translatesAutoresizingMaskIntoConstraints="NO" id="svw-dO-fFc">
+                                                <rect key="frame" x="110" y="177.5" width="100" height="100"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjh-dD-47r" userLabel="Space View">
+                                                <rect key="frame" x="0.0" y="277.5" width="320" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There's an error to get the current forecast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwQ-hn-b10">
+                                                <rect key="frame" x="0.0" y="310.5" width="320" height="44"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onD-PZ-3TC">
+                                                <rect key="frame" x="116.5" y="388" width="87" height="34"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                                <state key="normal" title="Try Again">
+                                                    <color key="titleColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tryAgainAction:" destination="jks-Ts-ZWC" eventType="touchUpInside" id="fnr-TJ-2sG"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1K3-Gi-Ddh" userLabel="Space View">
+                                                <rect key="frame" x="0.0" y="422" width="320" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNr-xh-RFA" userLabel="Space View">
+                                                <rect key="frame" x="0.0" y="354.5" width="320" height="33.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="1K3-Gi-Ddh" firstAttribute="leading" secondItem="sH7-e4-tZs" secondAttribute="leading" id="0IN-GB-bBj"/>
+                                            <constraint firstItem="onD-PZ-3TC" firstAttribute="top" secondItem="CNr-xh-RFA" secondAttribute="bottom" id="14Y-5z-bJX"/>
+                                            <constraint firstAttribute="trailing" secondItem="1K3-Gi-Ddh" secondAttribute="trailing" id="1uT-rT-zBm"/>
+                                            <constraint firstAttribute="bottom" secondItem="1K3-Gi-Ddh" secondAttribute="bottom" id="70r-m1-V2J"/>
+                                            <constraint firstItem="1K3-Gi-Ddh" firstAttribute="height" secondItem="Rjh-dD-47r" secondAttribute="height" id="7r8-In-bGG"/>
+                                            <constraint firstItem="hwQ-hn-b10" firstAttribute="leading" secondItem="sH7-e4-tZs" secondAttribute="leading" id="BRV-Dq-Idd"/>
+                                            <constraint firstItem="onD-PZ-3TC" firstAttribute="centerX" secondItem="sH7-e4-tZs" secondAttribute="centerX" id="Jxz-bf-Z4i"/>
+                                            <constraint firstItem="Rjh-dD-47r" firstAttribute="leading" secondItem="sH7-e4-tZs" secondAttribute="leading" id="Log-rb-vJq"/>
+                                            <constraint firstItem="Rjh-dD-47r" firstAttribute="top" secondItem="svw-dO-fFc" secondAttribute="bottom" id="P84-mR-fuw"/>
+                                            <constraint firstItem="hwQ-hn-b10" firstAttribute="top" secondItem="Rjh-dD-47r" secondAttribute="bottom" id="R7D-ow-uEM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rjh-dD-47r" secondAttribute="trailing" id="UoT-4x-vFY"/>
+                                            <constraint firstItem="CNr-xh-RFA" firstAttribute="top" secondItem="hwQ-hn-b10" secondAttribute="bottom" id="XFL-cQ-qSp"/>
+                                            <constraint firstAttribute="trailing" secondItem="CNr-xh-RFA" secondAttribute="trailing" id="YCA-ok-jnb"/>
+                                            <constraint firstItem="CNr-xh-RFA" firstAttribute="height" secondItem="Rjh-dD-47r" secondAttribute="height" id="bXP-m3-ZUa"/>
+                                            <constraint firstAttribute="trailing" secondItem="hwQ-hn-b10" secondAttribute="trailing" id="epZ-mr-l1d"/>
+                                            <constraint firstItem="svw-dO-fFc" firstAttribute="centerY" secondItem="sH7-e4-tZs" secondAttribute="centerY" id="jWU-Ox-wAg"/>
+                                            <constraint firstItem="svw-dO-fFc" firstAttribute="centerX" secondItem="sH7-e4-tZs" secondAttribute="centerX" id="mJ9-1Z-NYZ"/>
+                                            <constraint firstItem="CNr-xh-RFA" firstAttribute="leading" secondItem="sH7-e4-tZs" secondAttribute="leading" id="msM-b5-jOg"/>
+                                            <constraint firstItem="1K3-Gi-Ddh" firstAttribute="top" secondItem="onD-PZ-3TC" secondAttribute="bottom" id="wrB-LT-VWo"/>
+                                        </constraints>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgP-ZB-ERO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big thunderstorm (night)" translatesAutoresizingMaskIntoConstraints="NO" id="oaA-Tz-GLj">
+                                                <rect key="frame" x="110" y="177.5" width="100" height="100"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsV-mu-eBX">
+                                                <rect key="frame" x="0.0" y="277.5" width="320" height="177.5"/>
+                                                <string key="text">It's mandatory to give location permission.
+Check your settings and
+try again.</string>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="oaA-Tz-GLj" firstAttribute="centerX" secondItem="sgP-ZB-ERO" secondAttribute="centerX" id="0CB-Q9-dZH"/>
+                                            <constraint firstAttribute="trailing" secondItem="xsV-mu-eBX" secondAttribute="trailing" id="36l-B5-THg"/>
+                                            <constraint firstItem="xsV-mu-eBX" firstAttribute="leading" secondItem="sgP-ZB-ERO" secondAttribute="leading" id="5Ua-Gu-dbO"/>
+                                            <constraint firstAttribute="bottom" secondItem="xsV-mu-eBX" secondAttribute="bottom" id="B0N-6v-af7"/>
+                                            <constraint firstItem="xsV-mu-eBX" firstAttribute="top" secondItem="oaA-Tz-GLj" secondAttribute="bottom" id="IMJ-J1-AXf"/>
+                                            <constraint firstItem="oaA-Tz-GLj" firstAttribute="centerY" secondItem="sgP-ZB-ERO" secondAttribute="centerY" id="hCX-t9-nk4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sH7-e4-tZs" firstAttribute="leading" secondItem="ZIv-5n-jJg" secondAttribute="leading" id="4HX-u6-xNd"/>
+                                    <constraint firstItem="sH7-e4-tZs" firstAttribute="top" secondItem="ZIv-5n-jJg" secondAttribute="top" id="6jm-4P-Nz1"/>
+                                    <constraint firstAttribute="bottom" secondItem="sgP-ZB-ERO" secondAttribute="bottom" id="9gh-Rd-Kgz"/>
+                                    <constraint firstAttribute="bottom" secondItem="sH7-e4-tZs" secondAttribute="bottom" id="BmY-WW-j2b"/>
+                                    <constraint firstAttribute="trailing" secondItem="sH7-e4-tZs" secondAttribute="trailing" id="P1p-Im-yti"/>
+                                    <constraint firstAttribute="trailing" secondItem="sgP-ZB-ERO" secondAttribute="trailing" id="Rjx-cy-ybw"/>
+                                    <constraint firstItem="sgP-ZB-ERO" firstAttribute="leading" secondItem="ZIv-5n-jJg" secondAttribute="leading" id="rvE-8T-oLv"/>
+                                    <constraint firstItem="sgP-ZB-ERO" firstAttribute="top" secondItem="ZIv-5n-jJg" secondAttribute="top" id="tOT-WB-MTS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KP7-3Y-TdT" firstAttribute="leading" secondItem="0kn-0q-3w6" secondAttribute="leading" id="D1x-r4-065"/>
                             <constraint firstItem="0kn-0q-3w6" firstAttribute="bottom" secondItem="KP7-3Y-TdT" secondAttribute="bottom" id="PVL-Fz-bhT"/>
+                            <constraint firstItem="ZIv-5n-jJg" firstAttribute="leading" secondItem="0kn-0q-3w6" secondAttribute="leading" id="PfS-Gv-1z5"/>
+                            <constraint firstItem="0kn-0q-3w6" firstAttribute="bottom" secondItem="ZIv-5n-jJg" secondAttribute="bottom" id="SCO-1t-dUl"/>
+                            <constraint firstItem="ZIv-5n-jJg" firstAttribute="top" secondItem="0kn-0q-3w6" secondAttribute="top" id="fI7-Uq-BmQ"/>
                             <constraint firstItem="0kn-0q-3w6" firstAttribute="trailing" secondItem="KP7-3Y-TdT" secondAttribute="trailing" id="vc3-mV-VIw"/>
+                            <constraint firstItem="ZIv-5n-jJg" firstAttribute="trailing" secondItem="0kn-0q-3w6" secondAttribute="trailing" id="wPz-Eo-Goc"/>
                             <constraint firstItem="KP7-3Y-TdT" firstAttribute="top" secondItem="0kn-0q-3w6" secondAttribute="top" id="wrf-9c-S4V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0kn-0q-3w6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="CKZ-0j-EHl"/>
                     <connections>
+                        <outlet property="connectionErrorView" destination="sH7-e4-tZs" id="pNQ-iI-x27"/>
+                        <outlet property="errorView" destination="ZIv-5n-jJg" id="7aF-m2-5qH"/>
+                        <outlet property="permissionErrorView" destination="sgP-ZB-ERO" id="iq0-qc-IWT"/>
                         <outlet property="tableView" destination="KP7-3Y-TdT" id="itI-zO-IDd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lT5-ee-hQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="189"/>
+            <point key="canvasLocation" x="675" y="188.02816901408451"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="50j-EQ-xDv">
             <objects>
                 <viewController id="jks-Ts-ZWC" customClass="CurrentWeatherViewController" customModule="Weather_Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lwD-5y-bPK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5K-KJ-O0b">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuH-XN-w14" userLabel="Space view">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FH-zZ-oLg">
-                                        <rect key="frame" x="81" y="47.5" width="213" height="163.5"/>
+                                        <rect key="frame" x="53.5" y="22" width="213" height="163.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="13u-YZ-PRg">
                                                 <rect key="frame" x="56.5" y="0.0" width="100" height="100"/>
@@ -148,13 +255,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cl-yd-oDj" userLabel="Space view">
-                                        <rect key="frame" x="0.0" y="211" width="375" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="185.5" width="320" height="17.5"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77F-pp-rG7" userLabel="Weather Detail view">
-                                        <rect key="frame" x="20" y="248.5" width="335" height="172"/>
+                                        <rect key="frame" x="20" y="203" width="280" height="172"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ao-n4-CnW" userLabel="Divider View">
-                                                <rect key="frame" x="97.5" y="0.0" width="140" height="1"/>
+                                                <rect key="frame" x="70" y="0.0" width="140" height="1"/>
                                                 <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="16Z-C7-RnL"/>
@@ -162,7 +269,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Akx-BJ-nBx">
-                                                <rect key="frame" x="0.0" y="25" width="335" height="51"/>
+                                                <rect key="frame" x="0.0" y="25" width="280" height="51"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tC-N1-n83" userLabel="Space View">
                                                         <rect key="frame" x="0.0" y="0.0" width="42" height="51"/>
@@ -171,13 +278,13 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0j6-Y0-6BY" userLabel="Humidity View">
-                                                        <rect key="frame" x="42" y="0.0" width="73" height="51"/>
+                                                        <rect key="frame" x="42" y="0.0" width="65.5" height="51"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Humidity" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-rV-L8c">
-                                                                <rect key="frame" x="21.5" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="17.5" y="0.0" width="30" height="30"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5q-o1-QML">
-                                                                <rect key="frame" x="0.0" y="33" width="73" height="18"/>
+                                                                <rect key="frame" x="0.0" y="33" width="65.5" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="18" id="lqe-c6-qZL"/>
                                                                 </constraints>
@@ -199,20 +306,20 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBn-Mz-r2W" userLabel="Space View">
-                                                        <rect key="frame" x="115" y="0.0" width="16" height="51"/>
+                                                        <rect key="frame" x="107.5" y="0.0" width="0.0" height="51"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMt-Na-y1U" userLabel="Preciptation View">
-                                                        <rect key="frame" x="131" y="0.0" width="73" height="51"/>
+                                                        <rect key="frame" x="107.5" y="0.0" width="65" height="51"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Precipitation" translatesAutoresizingMaskIntoConstraints="NO" id="I2F-gU-7uR">
-                                                                <rect key="frame" x="21.5" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="17.5" y="0.0" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="NJG-ZM-HXT"/>
                                                                     <constraint firstAttribute="width" constant="30" id="v7C-2k-BBC"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0 mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WII-m7-u9i">
-                                                                <rect key="frame" x="0.0" y="33" width="73" height="18"/>
+                                                                <rect key="frame" x="0.0" y="33" width="65" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="18" id="gA1-6w-QER"/>
                                                                 </constraints>
@@ -234,20 +341,20 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-Sa-GJz" userLabel="Space View">
-                                                        <rect key="frame" x="204" y="0.0" width="16" height="51"/>
+                                                        <rect key="frame" x="172.5" y="0.0" width="0.0" height="51"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDe-Rm-5pi" userLabel="Pressure">
-                                                        <rect key="frame" x="220" y="0.0" width="73" height="51"/>
+                                                        <rect key="frame" x="172.5" y="0.0" width="65.5" height="51"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pressure" translatesAutoresizingMaskIntoConstraints="NO" id="yN7-4S-tv9">
-                                                                <rect key="frame" x="21.5" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="18" y="0.0" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="aME-20-k3Y"/>
                                                                     <constraint firstAttribute="width" constant="30" id="kVm-Rq-lr4"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1019 hPa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLq-PK-hDF">
-                                                                <rect key="frame" x="0.0" y="33" width="73" height="18"/>
+                                                                <rect key="frame" x="0.0" y="33" width="65.5" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="18" id="xTy-Ia-zJz"/>
                                                                 </constraints>
@@ -269,7 +376,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sot-ZA-gaq" userLabel="Space View">
-                                                        <rect key="frame" x="293" y="0.0" width="42" height="51"/>
+                                                        <rect key="frame" x="238" y="0.0" width="42" height="51"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="42" id="P4q-ja-ndK"/>
                                                         </constraints>
@@ -306,13 +413,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIf-EN-Knu">
-                                                <rect key="frame" x="0.0" y="96" width="335" height="51"/>
+                                                <rect key="frame" x="0.0" y="96" width="280" height="51"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbt-2p-GlZ" userLabel="Space View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="73.5" height="51"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="51"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xA0-IL-3CB">
-                                                        <rect key="frame" x="73.5" y="0.0" width="188" height="51"/>
+                                                        <rect key="frame" x="52.5" y="0.0" width="175" height="51"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b88-ID-Q7D" userLabel="Wind">
                                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="51"/>
@@ -347,10 +454,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfV-kG-rS5" userLabel="Space View">
-                                                                <rect key="frame" x="72" y="0.0" width="44" height="51"/>
+                                                                <rect key="frame" x="72" y="0.0" width="31" height="51"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcg-Xc-Jwi" userLabel="Wind Direction">
-                                                                <rect key="frame" x="116" y="0.0" width="72" height="51"/>
+                                                                <rect key="frame" x="103" y="0.0" width="72" height="51"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wind Direction" translatesAutoresizingMaskIntoConstraints="NO" id="Ybg-FC-ade">
                                                                         <rect key="frame" x="21" y="0.0" width="30" height="30"/>
@@ -397,7 +504,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaJ-lA-TKc" userLabel="Space View">
-                                                        <rect key="frame" x="261.5" y="0.0" width="73.5" height="51"/>
+                                                        <rect key="frame" x="227.5" y="0.0" width="52.5" height="51"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -416,7 +523,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXC-dC-Wpe" userLabel="Divider View">
-                                                <rect key="frame" x="97.5" y="171" width="140" height="1"/>
+                                                <rect key="frame" x="70" y="171" width="140" height="1"/>
                                                 <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Mvw-0j-Fi5"/>
@@ -440,17 +547,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbS-3a-5hD" userLabel="Space view">
-                                        <rect key="frame" x="0.0" y="420.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="375" width="320" height="23"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZo-rK-QpX">
-                                        <rect key="frame" x="161" y="470.5" width="53" height="34"/>
+                                        <rect key="frame" x="133.5" y="398" width="53" height="34"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                         <state key="normal" title="Share">
                                             <color key="titleColor" red="1" green="0.56905784145850136" blue="0.46174298700644656" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00h-Wd-vmf" userLabel="Space view">
-                                        <rect key="frame" x="0.0" y="504.5" width="375" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="432" width="320" height="23"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -481,21 +588,128 @@
                                     <constraint firstAttribute="bottom" secondItem="00h-Wd-vmf" secondAttribute="bottom" id="zzl-Cw-wxp"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFA-bY-XfL">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqw-q0-HaA">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big thunderstorm (night)" translatesAutoresizingMaskIntoConstraints="NO" id="92X-CQ-DSs">
+                                                <rect key="frame" x="110" y="177.5" width="100" height="100"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="88R-fP-wQW" userLabel="Space View">
+                                                <rect key="frame" x="0.0" y="277.5" width="320" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There's an error to get the current forecast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGD-7a-fSQ">
+                                                <rect key="frame" x="0.0" y="310.5" width="320" height="44"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh3-X5-cwn">
+                                                <rect key="frame" x="116.5" y="388" width="87" height="34"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                                <state key="normal" title="Try Again">
+                                                    <color key="titleColor" red="0.1843137255" green="0.56862745100000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tryAgainAction:" destination="jks-Ts-ZWC" eventType="touchUpInside" id="2Qe-qp-C3e"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvA-GU-2tf" userLabel="Space View">
+                                                <rect key="frame" x="0.0" y="422" width="320" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzy-ZF-19Z" userLabel="Space View">
+                                                <rect key="frame" x="0.0" y="354.5" width="320" height="33.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="88R-fP-wQW" secondAttribute="trailing" id="6GT-WQ-qIq"/>
+                                            <constraint firstItem="mGD-7a-fSQ" firstAttribute="top" secondItem="88R-fP-wQW" secondAttribute="bottom" id="BOh-u7-q20"/>
+                                            <constraint firstAttribute="trailing" secondItem="mGD-7a-fSQ" secondAttribute="trailing" id="CZi-4P-5ZC"/>
+                                            <constraint firstAttribute="trailing" secondItem="pvA-GU-2tf" secondAttribute="trailing" id="Fx6-AD-rdF"/>
+                                            <constraint firstItem="pvA-GU-2tf" firstAttribute="leading" secondItem="sqw-q0-HaA" secondAttribute="leading" id="OSo-2W-ep6"/>
+                                            <constraint firstItem="Kzy-ZF-19Z" firstAttribute="leading" secondItem="sqw-q0-HaA" secondAttribute="leading" id="OUo-wE-XlL"/>
+                                            <constraint firstItem="88R-fP-wQW" firstAttribute="top" secondItem="92X-CQ-DSs" secondAttribute="bottom" id="P20-Xp-7f0"/>
+                                            <constraint firstItem="92X-CQ-DSs" firstAttribute="centerY" secondItem="sqw-q0-HaA" secondAttribute="centerY" id="Q25-7B-Vse"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kzy-ZF-19Z" secondAttribute="trailing" id="TEw-fl-SIj"/>
+                                            <constraint firstAttribute="bottom" secondItem="pvA-GU-2tf" secondAttribute="bottom" id="VpM-Ho-uPg"/>
+                                            <constraint firstItem="pvA-GU-2tf" firstAttribute="height" secondItem="88R-fP-wQW" secondAttribute="height" id="YEc-Ha-ODf"/>
+                                            <constraint firstItem="Kzy-ZF-19Z" firstAttribute="height" secondItem="88R-fP-wQW" secondAttribute="height" id="ftS-JS-9eU"/>
+                                            <constraint firstItem="88R-fP-wQW" firstAttribute="leading" secondItem="sqw-q0-HaA" secondAttribute="leading" id="ndy-Ky-mcq"/>
+                                            <constraint firstItem="fh3-X5-cwn" firstAttribute="top" secondItem="Kzy-ZF-19Z" secondAttribute="bottom" id="pdv-JM-Dve"/>
+                                            <constraint firstItem="pvA-GU-2tf" firstAttribute="top" secondItem="fh3-X5-cwn" secondAttribute="bottom" id="uSz-ln-ej8"/>
+                                            <constraint firstItem="Kzy-ZF-19Z" firstAttribute="top" secondItem="mGD-7a-fSQ" secondAttribute="bottom" id="xnL-vi-VSL"/>
+                                            <constraint firstItem="fh3-X5-cwn" firstAttribute="centerX" secondItem="sqw-q0-HaA" secondAttribute="centerX" id="xvz-bn-C25"/>
+                                            <constraint firstItem="mGD-7a-fSQ" firstAttribute="leading" secondItem="sqw-q0-HaA" secondAttribute="leading" id="yf9-Jg-1ZT"/>
+                                            <constraint firstItem="92X-CQ-DSs" firstAttribute="centerX" secondItem="sqw-q0-HaA" secondAttribute="centerX" id="zIK-yt-hAZ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REp-wO-xis" userLabel="Permission Error">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big thunderstorm (night)" translatesAutoresizingMaskIntoConstraints="NO" id="X5c-o1-988">
+                                                <rect key="frame" x="110" y="177.5" width="100" height="100"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pw0-0I-icu">
+                                                <rect key="frame" x="0.0" y="277.5" width="320" height="177.5"/>
+                                                <string key="text">It's mandatory to give location permission.
+Check your settings and
+try again.</string>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Pw0-0I-icu" firstAttribute="top" secondItem="X5c-o1-988" secondAttribute="bottom" id="0HS-65-jrr"/>
+                                            <constraint firstItem="Pw0-0I-icu" firstAttribute="leading" secondItem="REp-wO-xis" secondAttribute="leading" id="K7C-T4-nHY"/>
+                                            <constraint firstItem="X5c-o1-988" firstAttribute="centerX" secondItem="REp-wO-xis" secondAttribute="centerX" id="Te9-8H-XrP"/>
+                                            <constraint firstItem="X5c-o1-988" firstAttribute="centerY" secondItem="REp-wO-xis" secondAttribute="centerY" id="Yht-lb-UsO"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pw0-0I-icu" secondAttribute="bottom" id="bZm-9n-FZw"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pw0-0I-icu" secondAttribute="trailing" id="rv4-Rf-6J5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="REp-wO-xis" firstAttribute="leading" secondItem="ZFA-bY-XfL" secondAttribute="leading" id="1Tf-Ic-bEM"/>
+                                    <constraint firstAttribute="trailing" secondItem="REp-wO-xis" secondAttribute="trailing" id="Ch9-ba-AnE"/>
+                                    <constraint firstAttribute="trailing" secondItem="sqw-q0-HaA" secondAttribute="trailing" id="KDz-uS-OuV"/>
+                                    <constraint firstAttribute="bottom" secondItem="REp-wO-xis" secondAttribute="bottom" id="WaR-pm-jrP"/>
+                                    <constraint firstItem="REp-wO-xis" firstAttribute="top" secondItem="ZFA-bY-XfL" secondAttribute="top" id="ZHC-Aw-BAr"/>
+                                    <constraint firstItem="sqw-q0-HaA" firstAttribute="top" secondItem="ZFA-bY-XfL" secondAttribute="top" id="flA-66-gIq"/>
+                                    <constraint firstAttribute="bottom" secondItem="sqw-q0-HaA" secondAttribute="bottom" id="iO1-eI-Kcf"/>
+                                    <constraint firstItem="sqw-q0-HaA" firstAttribute="leading" secondItem="ZFA-bY-XfL" secondAttribute="leading" id="rej-4l-k99"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VNN-Wc-o21" firstAttribute="bottom" secondItem="U5K-KJ-O0b" secondAttribute="bottom" id="JSV-Yp-ot2"/>
+                            <constraint firstItem="VNN-Wc-o21" firstAttribute="trailing" secondItem="ZFA-bY-XfL" secondAttribute="trailing" id="LUP-zR-3D2"/>
                             <constraint firstItem="U5K-KJ-O0b" firstAttribute="leading" secondItem="lwD-5y-bPK" secondAttribute="leading" id="ZbX-rJ-WNe"/>
                             <constraint firstAttribute="trailing" secondItem="U5K-KJ-O0b" secondAttribute="trailing" id="c09-pb-lgA"/>
+                            <constraint firstItem="ZFA-bY-XfL" firstAttribute="leading" secondItem="VNN-Wc-o21" secondAttribute="leading" id="hfT-lM-zyp"/>
                             <constraint firstItem="U5K-KJ-O0b" firstAttribute="top" secondItem="VNN-Wc-o21" secondAttribute="top" id="ndm-Re-Ec7"/>
+                            <constraint firstItem="ZFA-bY-XfL" firstAttribute="top" secondItem="VNN-Wc-o21" secondAttribute="top" id="xFH-7W-GmY"/>
+                            <constraint firstItem="VNN-Wc-o21" firstAttribute="bottom" secondItem="ZFA-bY-XfL" secondAttribute="bottom" id="zIP-sC-fIj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VNN-Wc-o21"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="xHE-eT-S9h"/>
                     <connections>
+                        <outlet property="connectionErrorView" destination="sqw-q0-HaA" id="SIi-Rw-hHO"/>
                         <outlet property="contentView" destination="U5K-KJ-O0b" id="kGj-cC-Pi2"/>
+                        <outlet property="errorView" destination="ZFA-bY-XfL" id="ey7-76-yar"/>
                         <outlet property="humidityLabel" destination="o5q-o1-QML" id="UY6-dd-sfJ"/>
                         <outlet property="locationLabel" destination="vBy-da-wyU" id="FQj-px-0MH"/>
+                        <outlet property="permissionErrorView" destination="REp-wO-xis" id="bd4-yl-48B"/>
                         <outlet property="preciptationLabel" destination="WII-m7-u9i" id="Hdm-bP-DW7"/>
                         <outlet property="pressureLabel" destination="TLq-PK-hDF" id="pPK-rG-G6e"/>
                         <outlet property="temperatureLabel" destination="kNO-xP-c1q" id="0wG-jL-riq"/>
@@ -514,7 +728,7 @@
             <objects>
                 <navigationController id="bBz-Ir-a65" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2ov-RT-bTM">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -552,5 +766,6 @@
         <image name="Pressure" width="30" height="30"/>
         <image name="Wind" width="30" height="30"/>
         <image name="Wind Direction" width="30" height="30"/>
+        <image name="big thunderstorm (night)" width="100" height="100"/>
     </resources>
 </document>
