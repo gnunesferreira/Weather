@@ -159,8 +159,11 @@
 		D875E7DB2236C933004D546D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D875E7DC2236C93C004D546D /* Fonts */,
 				D8CBD4822232A950006F987B /* Assets.xcassets */,
+				D875E7DC2236C93C004D546D /* Fonts */,
+				D8CBD4872232A950006F987B /* Info.plist */,
+				D8CBD4842232A950006F987B /* LaunchScreen.storyboard */,
+				D8CBD47C2232A94E006F987B /* Main.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -233,9 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				D8CBD4782232A94E006F987B /* AppDelegate.swift */,
-				D8CBD4872232A950006F987B /* Info.plist */,
-				D8CBD4842232A950006F987B /* LaunchScreen.storyboard */,
-				D8CBD47C2232A94E006F987B /* Main.storyboard */,
 				D875E7D52236C735004D546D /* Model */,
 				D875E7D82236C8D0004D546D /* Networking */,
 				D875E7DB2236C933004D546D /* Resources */,
@@ -537,7 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7WJQ8MHQUD;
-				INFOPLIST_FILE = "Weather Forecast/Info.plist";
+				INFOPLIST_FILE = "Weather Forecast/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -558,7 +558,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7WJQ8MHQUD;
-				INFOPLIST_FILE = "Weather Forecast/Info.plist";
+				INFOPLIST_FILE = "Weather Forecast/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

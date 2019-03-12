@@ -49,6 +49,15 @@ class CurrentWeatherViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.topItem?.title = "Today"
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        guard let currenWeather = locationWeather else { return }
+        navigationController?.navigationBar.topItem?.title = currenWeather.cityName
+    }
+
     // MARK: - Request method
 
     private func requestCurrentWeather(coordinate: CLLocationCoordinate2D) {
